@@ -22,8 +22,8 @@ public class LoginPageEvents {
         fetchElement.getElement("XPATH", LoginObjects.createNewAccount).click();
     }
 
-    public boolean verifyEmailFormat(){
-
+    public boolean verifyEmailFormatCheck( String usr){
+                        fetchElement.getElement("XPATH", LoginObjects.username).sendKeys(usr);
         if(fetchElement.getElement("XPATH", LoginObjects.emailErrorMessage).getText().equalsIgnoreCase("email is not a valid email"))
         { return true;}
         else return false;

@@ -17,6 +17,8 @@ public class FetchElement {
                 return BaseTest.driver.findElement(By.cssSelector(identifierValue));
             case "TAGNAME":
                 return BaseTest.driver.findElement(By.tagName(identifierValue));
+            case "CN":
+                return BaseTest.driver.findElement(By.className(identifierValue));
             default:return null;
 
         }

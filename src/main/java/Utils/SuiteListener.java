@@ -32,7 +32,9 @@ public class SuiteListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult arg0) {
-      String fileName=System.getProperty("user.dir"+File.separator+"Screenshots"+File.separator+arg0.getMethod().getMethodName());
+      String fileName="C://Users//Rowzan//IdeaProjects//Reesby//screenshots//"+arg0.getMethod().getMethodName();
+        System.out.println(fileName);
+
               File f =((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(f, new File(fileName+".png"));

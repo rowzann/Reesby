@@ -5,10 +5,12 @@
     </listeners>
 
     <test name="Test Automation">
-        <parameter name="browserName" value="chrome"></parameter>
+        <parameter name="browserName" value="Firefox"></parameter>
         <classes>
-            <class name="test.java.FuctionalTest.HomePageTest"></class>
-            <class name="test.java.FuctionalTest.LoginPageTest"></class>
+<!--            <class name="test.java.FuctionalTest.HomePageTest"></class>-->
+<!--            <class name="test.java.FuctionalTest.LoginPageTest"></class>-->
+            <class name="test.java.FuctionalTest.CustomerEmailTest"></class>
+<!--            <class name="test.java.FuctionalTest.EmailListTest"></class>-->
         </classes>
     </test>
 

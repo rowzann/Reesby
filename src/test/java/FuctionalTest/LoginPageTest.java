@@ -35,8 +35,19 @@ driver.get(Constants.url+"/auth/login");
     @Test(priority = 4)
     public void emailFormat(){
         driver.get(Constants.url+"/auth/login");
-        loginPageEvents.loginFromCredentials("jhhgg",Constants.password);
-       Assert.assertTrue(loginPageEvents.verifyEmailFormat()) ;
-
+        Assert.assertTrue(loginPageEvents.verifyEmailFormatCheck("invalid")) ;
+    }
+    @Test
+    public void redirectToCreateNewAcc(){
+        driver.get(Constants.url+"/auth/login");
+        loginPageEvents.dontHaveAnAccount();
+        Assert.assertEquals(driver.getCurrentUrl(),Constants.url+"/auth/register");
+    }
+    @Test
+    public void verifysigninwithgoogle(){
+        driver.get(Constants.url+"/auth/login");
+        loginPageEvents.loginFromGoogle();
+        Assert.assertNotEquals(driver.getCurrentUrl(),Constants.url+"/auth/login");
     }
 }
+
