@@ -14,9 +14,9 @@ public class CustomerEmailListEvent {
     FetchElement f=new FetchElement();
     public void addnewcustomer(){
         f.getElement("XPATH",CustomerEmailListObjects.addButton).click();
-        f.getElement("XPATH",CustomerEmailListObjects.fullname).sendKeys("Test"+c);
+        f.getElement("XPATH",CustomerEmailListObjects.fullname).sendKeys("testuser "+c);
         f.getElement("XPATH",CustomerEmailListObjects.email).sendKeys("test@mail.com");
-        f.getElement("XPATH",CustomerEmailListObjects.phone_number).sendKeys(c+"123");
+        f.getElement("XPATH",CustomerEmailListObjects.phone_number).sendKeys(c+"12356789");
         f.getElement("XPATH",CustomerEmailListObjects.homeAddress).sendKeys(c+" street1");
         f.getElement("XPATH",CustomerEmailListObjects.job_title).sendKeys("tester");
         f.getElement("XPATH",CustomerEmailListObjects.createButton).click();
@@ -36,5 +36,8 @@ public class CustomerEmailListEvent {
     public void getPageIg(){
         f.getElement("XPATH",CustomerEmailListObjects.rowsPerPagebutton).click();
         f.getElement("XPATH",CustomerEmailListObjects.rowsPerPagebutton5).click();
+    }
+    public String getTitleofCustomer(){
+       return f.getElement("XPATH",CustomerEmailListObjects.ListNameTitle).getText();
     }
 }

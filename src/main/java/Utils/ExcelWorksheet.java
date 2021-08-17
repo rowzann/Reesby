@@ -9,10 +9,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.*;
 
 public class ExcelWorksheet {
-    public void readExcel(String filePath,String fileName,String sheetName) throws IOException {
-
+    public List<HashMap> readExcel(String filePath, String fileName, String sheetName) throws IOException {
+        HashMap<String, String> CellValuCol = new HashMap<String, String>();
+        List<HashMap> arrayList=new LinkedList<>();
         //Create an object of File class to open xlsx file
 
         File file =    new File(filePath+"\\"+fileName);
@@ -57,23 +59,21 @@ public class ExcelWorksheet {
 
         //Create a loop over all the rows of excel file to read it
 
-        for (int i = 0; i < rowCount+1; i++) {
+        for (int i = 1; i < rowCount+1; i++) {
 
             Row row = reesbySheet.getRow(i);
+            int colSize = row.getLastCellNum();
+            int j = 0;
 
-            //Create a loop to print cell values in a row
+                    CellValuCol.put("Module", row.getCell(j).getStringCellValue());
+                    CellValuCol.put("api", row.getCell(j+1 ).getStringCellValue());
+                    CellValuCol.put("type", row.getCell(j+2 ).getStringCellValue());
+                arrayList.add(new HashMap(CellValuCol));
 
-            for (int j = 0; j < row.getLastCellNum(); j++) {
 
-                //Print Excel data in console
-
-                System.out.print(row.getCell(j).getStringCellValue()+"|| ");
-
-            }
-
-            System.out.println();
         }
 
+        return arrayList;
     }
 
 }

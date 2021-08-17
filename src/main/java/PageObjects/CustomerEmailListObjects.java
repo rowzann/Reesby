@@ -16,5 +16,6 @@ public interface CustomerEmailListObjects {
     String phone_number="/html/body/div[2]/div[3]/div/form/div[1]/div/div/div[4]/div/div/input";
     String job_title="/html/body/div[2]/div[3]/div/form/div[1]/div/div/div[5]/div/div/input";
     String createButton="/html/body/div[2]/div[3]/div/form/div[2]/button[2]";
+    String ListNameTitle="//span[@class='MuiTypography-root MuiCardHeader-title MuiTypography-h5 MuiTypography-displayBlock']";
 
 }

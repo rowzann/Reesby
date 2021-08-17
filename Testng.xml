@@ -4,15 +4,21 @@
         <listener class-name = "main.java.Utils.SuiteListener"></listener>
     </listeners>
 
-    <test name="Test Automation">
+    <test name="Test Automation UI">
         <parameter name="browserName" value="Firefox"></parameter>
         <classes>
 <!--            <class name="test.java.FuctionalTest.HomePageTest"></class>-->
 <!--            <class name="test.java.FuctionalTest.LoginPageTest"></class>-->
-            <class name="test.java.FuctionalTest.CustomerEmailTest"></class>
-<!--            <class name="test.java.FuctionalTest.EmailListTest"></class>-->
+<!--            <class name="test.java.FuctionalTest.CustomerEmailTest"></class>-->
+            <class name="test.java.FuctionalTest.EmailListTest"></class>
         </classes>
     </test>
+<!--    <test name="Test Automation API">-->
+<!--        <parameter name="browserName" value="Firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="test.java.API.validateAPIresponse"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 
 </suite>
